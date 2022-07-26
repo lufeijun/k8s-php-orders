@@ -16,4 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/list', [IndexController::class, 'list']);
+Route::post('/list/with/user', [IndexController::class, 'listWithUser']);
 Route::post('/detail', [IndexController::class, 'detail']);
+Route::post('/detail/with/user', [IndexController::class, 'detailWithUser']);

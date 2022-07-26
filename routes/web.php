@@ -1,5 +1,6 @@
 <?php
 
+use App\Tools\Curl\Curl;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return "<h1>订单体系</h1>";
+});
+
+Route::get('/test', function () {
+    $url = config('custom.env.USER_URL') . "/api/user/list";
+
+    $result = Curl::httpPost( $url );
+
+    echo "<pre>";
+    print_r( $result );
+
 });
